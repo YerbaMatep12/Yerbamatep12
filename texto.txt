@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YERBAMATEP12 | Catálogo Oficial — Mates, Yerbas & Accesorios</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mate: {
+              dark: '#1B4332',
+              primary: '#2D6A4F',
+              sage: '#52B788',
+              cream: '#FAF7F2',
+              paper: '#F3EDE2',
+              wood: '#8B5E34',
+              leather: '#5C3A21',
+              gold: '#C59B27',
+              goldLight: '#E9D8A6'
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Estilos personalizados sutiles para barra de desplazamiento y animaciones */
+    body {
+      background-color: #FAF7F2;
+      color: #1F2421;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .card-shadow {
+      box-shadow: 0 10px 30px -10px rgba(27, 67, 50, 0.08);
+    }
+    .card-shadow:hover {
+      box-shadow: 0 20px 35px -12px rgba(27, 67, 50, 0.16);
+    }
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    .animate-float {
+      animation: floatSlow 5s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-mate-primary selection:text-white">
+
+  <!-- Barra superior informativa -->
+  <div class="bg-mate-dark text-mate-cream text-xs sm:text-sm py-2 px-4 text-center tracking-wide">
+    <span>🌿 Productos artesanales seleccionados • Stock sujeto a disponibilidad • </span>
+    <a href="https://instagram.com/yerbamatep12" target="_blank" rel="noopener noreferrer" class="underline font-semibold text-mate-goldLight hover:text-white transition">
+      @yerbamatep12
+    </a>
+  </div>
+
+  <!-- Encabezado Principal -->
+  <header class="bg-mate-cream/95 backdrop-blur-md border-b border-mate-wood/15">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4">
+      <!-- Logo / Marca -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-mate-dark border-2 border-mate-gold flex items-center justify-center shadow-md group-hover:scale-105 transition">
+          <!-- Icono SVG Emblema Mate -->
+          <svg class="w-6 h-6 text-mate-goldLight" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 12C9 9.5 11.5 8 16 8C20.5 8 23 9.5 23 12C23 18.5 20.5 24 16 24C11.5 24 9 18.5 9 12Z" fill="#2D6A4F" stroke="#E9D8A6"/>
+            <path d="M8.5 12H23.5" stroke="#C59B27" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M18 11L24 4" stroke="#E9D8A6" stroke-width="2.2" stroke-linecap="round"/>
+            <circle cx="24.5" cy="3.5" r="1.2" fill="#C59B27" stroke="none"/>
+          </svg>
+        </div>
+        <div>
+          <span class="font-serif font-extrabold text-xl sm:text-2xl tracking-tight text-mate-dark block leading-none">
+            YERBAMATEP12
+          </span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-mate-wood font-semibold">
+            Yerba & Mates • Premium
+          </span>
+        </div>
+      </a>
+
+      <!-- Acciones Rápidas Header -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button id="toggleEditModeBtn" onclick="toggleEditMode()" title="Subir tus fotos reales a cada producto"
+          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-semibold border border-mate-wood/30 text-mate-wood hover:bg-mate-wood hover:text-white transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          <span id="editModeLabel">Cargar Fotos</span>
+        </button>
+
+        <a href="https://instagram.com/yerbamatep12" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-mate-paper text-mate-dark border border-mate-dark/15 hover:bg-mate-dark hover:text-white transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          <span class="hidden md:inline">Instagram</span>
+        </a>
+
+        <button onclick="openCart()" class="relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mate-dark text-white text-xs sm:text-sm font-semibold hover:bg-mate-primary transition shadow-sm">
+          <svg class="w-4 h-4 text-mate-goldLight" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span>Mi Pedido</span>
+          <span id="headerCartCount" class="bg-mate-gold text-mate-dark font-bold text-xs px-2 py-0.5 rounded-full">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner / Portada Editorial -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-mate-dark via-[#214E3A] to-mate-primary text-mate-cream">
+    <!-- Textura decorativa sutil -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#E9D8A6 1px, transparent 1px); background-size: 24px 24px;"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <!-- Columna Texto -->
+        <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-mate-gold/40 text-mate-goldLight text-xs font-semibold tracking-widest uppercase">
+            <span>✦</span>
+            <span>Catálogo Oficial • Colección Artesanal</span>
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white">
+            El ritual del buen mate, <span class="italic text-mate-goldLight font-semibold">hecho para durar.</span>
+          </h1>
+
+          <p class="text-mate-cream/85 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            Explorá nuestra selección de mates imperiales, torpedos cincelados, algarrobo trabajado a mano, bombillas de alpaca, termos y las mejores yerbas importadas.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
+            <a href="#catalogo" class="px-6 py-3.5 rounded-full bg-mate-gold text-mate-dark font-bold text-sm sm:text-base hover:bg-mate-goldLight transition shadow-lg">
+              Explorar Catálogo ↓
+            </a>
+            <a href="https://instagram.com/yerbamatep12" target="_blank" rel="noopener noreferrer"
+              class="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold text-sm sm:text-base transition">
+              Consultas por @yerbamatep12
+            </a>
+          </div>
+
+          <!-- Indicadores rápidos -->
+          <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/15 max-w-lg mx-auto lg:mx-0 text-left">
+            <div>
+              <p class="font-serif text-xl sm:text-2xl font-bold text-mate-goldLight">11 Modelos</p>
+              <p class="text-xs text-mate-cream/75">Mates de cuero y algarrobo</p>
+            </div>
+            <div>
+              <p class="font-serif text-xl sm:text-2xl font-bold text-mate-goldLight">Alpaca & Acero</p>
+              <p class="text-xs text-mate-cream/75">Bombillas y virolas labradas</p>
+            </div>
+            <div>
+              <p class="font-serif text-xl sm:text-2xl font-bold text-mate-goldLight">Baldo & Canarias</p>
+              <p class="text-xs text-mate-cream/75">1/2 kg, 1 kg y latas</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Ilustración Composición Mesa Matera -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-md bg-mate-cream/10 backdrop-blur-sm border border-mate-gold/30 rounded-3xl p-6 sm:p-8 shadow-2xl animate-float">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs uppercase tracking-widest text-mate-goldLight font-semibold">Selección Destacada</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-mate-gold/20 text-mate-goldLight text-xs font-bold">20 Productos</span>
+            </div>
+
+            <!-- Escena SVG Mesa Matera -->
+            <svg viewBox="0 0 360 250" class="w-full h-auto drop-shadow-lg" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Fondo cálido circular -->
+              <circle cx="180" cy="130" r="105" fill="#FAF7F2" fill-opacity="0.12"/>
+              <!-- Mesa -->
+              <ellipse cx="180" cy="218" rx="145" ry="16" fill="#122B20"/>
+              
+              <!-- Termo Media Manija Negro -->
+              <rect x="72" y="68" width="46" height="145" rx="10" fill="#1F2421" stroke="#4A5550" stroke-width="1.5"/>
+              <path d="M118 88H129C132 88 134 90 134 93V142" stroke="#1F2421" stroke-width="5" stroke-linecap="round"/>
+              <rect x="76" y="45" width="38" height="24" rx="5" fill="#2B302D"/>
+              <rect x="82" y="38" width="26" height="8" rx="2" fill="#C59B27"/>
+              <text x="95" y="145" fill="#E9D8A6" font-size="8" font-family="sans-serif" font-weight="bold" text-anchor="middle" transform="rotate(-90 95 145)">TERMO MEDIA MANIJA</text>
+
+              <!-- Mate Imperial Cuero Bordó -->
+              <path d="M150 135C150 118 164 112 184 112C204 112 218 118 218 135C218 168 206 196 184 196C162 196 150 168 150 135Z" fill="#6E1E2A"/>
+              <!-- Patas -->
+              <path d="M162 190L157 212H167L170 194" fill="#4A121B"/>
+              <path d="M206 190L211 212H201L198 194" fill="#4A121B"/>
+              <!-- Virola Alpaca Cincelada -->
+              <rect x="152" y="114" width="64" height="16" rx="4" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1"/>
+              <path d="M158 122H166M172 122H180M186 122H194M200 122H208" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+              <!-- Bombilla -->
+              <path d="M192 115L222 65" stroke="#CBD5E1" stroke-width="4.5" stroke-linecap="round"/>
+              <ellipse cx="224" cy="62" rx="4" ry="2.5" transform="rotate(-55 224 62)" fill="#C59B27"/>
+
+              <!-- Mate Ranchero Algarrobo -->
+              <path d="M244 148C244 136 254 132 268 132C282 132 292 136 292 148C292 174 285 204 268 204C251 204 244 174 244 148Z" fill="#A47148"/>
+              <path d="M247 174C255 168 262 178 268 166C274 178 282 170 289 175C287 193 280 204 268 204C256 204 249 193 247 174Z" fill="#1F2421"/>
+              <ellipse cx="268" cy="134" rx="22" ry="5" fill="#D4A373" stroke="#1F2421" stroke-width="2.5"/>
+            </svg>
+
+            <div class="mt-4 flex items-center justify-between text-xs text-mate-cream/90 bg-black/20 rounded-2xl px-4 py-3">
+              <span>📦 Pedidos directos por WhatsApp</span>
+              <span class="font-bold text-mate-goldLight">Envíos y Retiros</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Barra de Navegación Sticky: Categorías, Buscador y Orden -->
+  <nav id="catalogo" class="sticky top-0 z-30 bg-mate-cream/95 backdrop-blur-md border-b border-mate-wood/15 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 space-y-3">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <!-- Pestañas de Categorías -->
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 md:pb-0" id="categoryTabs">
+          <button data-cat="Todos" onclick="setCategory('Todos')"
+            class="cat-btn active whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-mate-dark text-white transition">
+            Todos (20)
+          </button>
+          <button data-cat="Mates" onclick="setCategory('Mates')"
+            class="cat-btn whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-mate-paper text-mate-dark hover:bg-mate-dark/10 transition">
+            🧉 Mates (11)
+          </button>
+          <button data-cat="Bombillas" onclick="setCategory('Bombillas')"
+            class="cat-btn whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-mate-paper text-mate-dark hover:bg-mate-dark/10 transition">
+            🥢 Bombillas (2)
+          </button>
+          <button data-cat="Yerbas" onclick="setCategory('Yerbas')"
+            class="cat-btn whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-mate-paper text-mate-dark hover:bg-mate-dark/10 transition">
+            🌿 Yerbas (5)
+          </button>
+          <button data-cat="Termos y Accesorios" onclick="setCategory('Termos y Accesorios')"
+            class="cat-btn whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-mate-paper text-mate-dark hover:bg-mate-dark/10 transition">
+            🫖 Termos y Accesorios (2)
+          </button>
+        </div>
+
+        <!-- Buscador y Ordenamiento -->
+        <div class="flex items-center gap-2">
+          <div class="relative flex-1 md:w-64">
+            <svg class="w-4 h-4 text-mate-wood/60 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            <input type="text" id="searchInput" oninput="renderProducts()" placeholder="Buscar mate, alpaca, canarias..."
+              class="w-full pl-9 pr-3 py-2 rounded-full bg-white border border-mate-wood/20 text-xs sm:text-sm focus:outline-none focus:border-mate-primary" />
+          </div>
+
+          <select id="sortSelect" onchange="renderProducts()"
+            class="px-3 py-2 rounded-full bg-white border border-mate-wood/20 text-xs sm:text-sm font-medium text-mate-dark focus:outline-none focus:border-mate-primary">
+            <option value="default">Orden: Destacados</option>
+            <option value="asc">Menor precio</option>
+            <option value="desc">Mayor precio</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner Aviso Modo Edición (Oculto por defecto) -->
+  <div id="editModeBanner" class="hidden bg-amber-50 border-b border-amber-200 px-4 py-3">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-amber-900">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">📸</span>
+        <p><strong>Modo Personalización de Fotos activo:</strong> Hacé clic en <em>"Subir Foto Real"</em> en cualquier producto para cargar tus fotos desde el celular o compu. Se guardan automáticamente en este navegador.</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="resetAllCustomPhotos()" class="px-3 py-1.5 rounded-lg bg-white border border-amber-300 text-amber-800 hover:bg-amber-100 font-semibold">
+          Restaurar ilustraciones
+        </button>
+        <button onclick="toggleEditMode()" class="px-3 py-1.5 rounded-lg bg-amber-800 text-white font-semibold">
+          Listo
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor Principal del Catálogo -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <!-- Contador de resultados -->
+    <div class="flex items-center justify-between mb-6">
+      <div>
+        <h2 id="sectionTitle" class="font-serif text-2xl sm:text-3xl font-bold text-mate-dark">Catálogo Completo</h2>
+        <p id="resultsCount" class="text-xs sm:text-sm text-mate-wood mt-0.5">Mostrando 20 productos disponibles</p>
+      </div>
+      <button onclick="toggleEditMode()" class="sm:hidden inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold border border-mate-wood/30 text-mate-wood">
+        📸 Fotos
+      </button>
+    </div>
+
+    <!-- Grilla de Productos -->
+    <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <!-- Se renderiza dinámicamente con JS -->
+    </div>
+
+    <!-- Estado vacío si no hay resultados en búsqueda -->
+    <div id="emptyState" class="hidden text-center py-16 bg-white rounded-3xl border border-mate-wood/15">
+      <p class="text-4xl mb-3">🧉</p>
+      <h3 class="font-serif text-xl font-bold text-mate-dark">No encontramos productos con esa búsqueda</h3>
+      <p class="text-sm text-mate-wood mt-1 mb-4">Probá con otro término como "Imperial", "Algarrobo", "Alpaca" o "Canarias".</p>
+      <button onclick="resetFilters()" class="px-5 py-2.5 rounded-full bg-mate-dark text-white text-sm font-semibold hover:bg-mate-primary transition">
+        Ver todos los productos
+      </button>
+    </div>
+  </main>
+
+  <!-- Banner Próximos Ingresos / Instagram -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="bg-mate-paper border border-mate-wood/20 rounded-3xl p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-2 text-center md:text-left">
+        <span class="inline-block px-3 py-1 rounded-full bg-mate-gold/20 text-mate-leather text-xs font-bold uppercase tracking-wider">
+          Novedades y Stock
+        </span>
+        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-mate-dark">
+          ¿Buscás algún modelo o grabado especial?
+        </h3>
+        <p class="text-sm sm:text-base text-mate-wood max-w-xl">
+          Todos nuestros mates y bombillas son seleccionados uno por uno. Seguinos en Instagram para ver ingresos semanales, videos detallados y promos en combos.
+        </p>
+      </div>
+      <a href="https://instagram.com/yerbamatep12" target="_blank" rel="noopener noreferrer"
+        class="shrink-0 inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-mate-dark text-white font-bold text-sm hover:bg-mate-primary transition shadow-md">
+        <span>Seguir a @yerbamatep12</span>
+        <span>→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-mate-dark text-mate-cream/85 py-10 px-4 border-t border-mate-gold/20">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <p class="font-serif text-lg font-bold text-white tracking-wide">YERBAMATEP12</p>
+        <p class="text-xs text-mate-cream/70 mt-0.5">Yerba Mate • Productos Premium & Accesorios</p>
+      </div>
+      <div class="text-xs sm:text-sm space-y-1">
+        <p class="font-semibold text-mate-goldLight">STOCK SUJETO A DISPONIBILIDAD</p>
+        <p>Seguinos en Instagram: <a href="https://instagram.com/yerbamatep12" target="_blank" rel="noopener noreferrer" class="underline hover:text-white font-semibold">@yerbamatep12</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón Flotante Carrito (Móvil y Desktop) -->
+  <button onclick="openCart()" id="floatingCartBtn"
+    class="fixed bottom-5 right-5 z-40 flex items-center gap-3 px-5 py-3.5 rounded-full bg-mate-dark text-white shadow-2xl border-2 border-mate-gold hover:bg-mate-primary transition transform hover:scale-105">
+    <div class="relative">
+      <svg class="w-6 h-6 text-mate-goldLight" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+      </svg>
+      <span id="floatCartBadge" class="absolute -top-2 -right-2 bg-mate-gold text-mate-dark text-[11px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+    </div>
+    <div class="text-left leading-tight">
+      <span class="block text-[10px] uppercase tracking-wider text-mate-goldLight font-semibold">Tu Pedido</span>
+      <span id="floatCartTotal" class="font-bold text-sm">$0</span>
+    </div>
+  </button>
+
+  <!-- Modal Detalle de Producto -->
+  <div id="productModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+    <div class="bg-mate-cream rounded-3xl max-w-xl w-full overflow-hidden shadow-2xl border border-mate-wood/20 animate-fadeIn">
+      <div class="relative bg-mate-paper p-6 flex items-center justify-center min-h-[240px]">
+        <button onclick="closeProductModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 text-mate-dark flex items-center justify-center font-bold shadow hover:bg-mate-dark hover:text-white transition">
+          ✕
+        </button>
+        <div id="modalVisualContainer" class="w-full max-w-[240px] flex items-center justify-center"></div>
+      </div>
+      <div class="p-6 sm:p-7 space-y-4">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <span id="modalCategory" class="text-xs font-bold uppercase tracking-wider text-mate-primary">Categoría</span>
+            <h3 id="modalTitle" class="font-serif text-2xl font-bold text-mate-dark mt-0.5">Nombre Producto</h3>
+          </div>
+          <p id="modalPrice" class="font-serif text-2xl font-extrabold text-mate-dark">$0</p>
+        </div>
+
+        <p id="modalDescription" class="text-sm text-mate-wood leading-relaxed"></p>
+
+        <!-- Selector de variantes dentro del modal -->
+        <div id="modalVariantsWrapper" class="space-y-2 pt-1">
+          <label class="block text-xs font-bold uppercase tracking-wider text-mate-dark">Seleccioná opción:</label>
+          <div id="modalVariantsList" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <div class="pt-3 flex items-center gap-3">
+          <button id="modalAddBtn" class="flex-1 py-3.5 px-6 rounded-full bg-mate-dark text-white font-bold text-sm hover:bg-mate-primary transition shadow-md">
+            + Agregar al Pedido
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer Lateral Carrito / Armador de Pedido -->
+  <div id="cartDrawer" class="fixed inset-0 z-50 hidden">
+    <div onclick="closeCart()" class="absolute inset-0 bg-black/50 backdrop-blur-xs"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-mate-cream shadow-2xl flex flex-col justify-between border-l border-mate-wood/20">
+      <!-- Header Drawer -->
+      <div class="p-5 bg-mate-dark text-white flex items-center justify-between">
+        <div>
+          <h3 class="font-serif text-xl font-bold">Tu Pedido</h3>
+          <p class="text-xs text-mate-goldLight">Armá tu selección y enviala lista para coordinar</p>
+        </div>
+        <button onclick="closeCart()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-sm font-bold">
+          ✕
+        </button>
+      </div>
+
+      <!-- Lista de items -->
+      <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-5 space-y-3">
+        <!-- Se llena dinámicamente -->
+      </div>
+
+      <!-- Footer Drawer: Datos y Botones de Envío -->
+      <div class="p-5 bg-mate-paper border-t border-mate-wood/20 space-y-3">
+        <div class="grid grid-cols-2 gap-2">
+          <input type="text" id="customerName" placeholder="Tu nombre"
+            class="px-3 py-2 rounded-xl bg-white border border-mate-wood/20 text-xs sm:text-sm focus:outline-none focus:border-mate-primary" />
+          <select id="deliveryMethod"
+            class="px-3 py-2 rounded-xl bg-white border border-mate-wood/20 text-xs sm:text-sm text-mate-dark focus:outline-none focus:border-mate-primary">
+            <option value="Retiro a coordinar">📍 Retiro a coordinar</option>
+            <option value="Envío a domicilio">🚚 Envío a domicilio</option>
+          </select>
+        </div>
+
+        <div class="flex items-center justify-between pt-1">
+          <span class="text-sm font-semibold text-mate-wood">Total estimado:</span>
+          <span id="drawerTotal" class="font-serif text-2xl font-extrabold text-mate-dark">$0</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+          <button onclick="copyOrderMessage()"
+            class="py-3 px-4 rounded-xl bg-white border border-mate-dark text-mate-dark font-bold text-xs sm:text-sm hover:bg-mate-dark/5 transition flex items-center justify-center gap-1.5">
+            <span>📋 Copiar Pedido</span>
+          </button>
+          <button onclick="sendWhatsAppOrder()"
+            class="py-3 px-4 rounded-xl bg-[#25D366] text-white font-bold text-xs sm:text-sm hover:brightness-95 transition shadow-md flex items-center justify-center gap-1.5">
+            <span>💬 Enviar por WhatsApp</span>
+          </button>
+        </div>
+        <p class="text-[11px] text-center text-mate-wood">
+          También podés copiar el pedido y pegarlo en nuestro Instagram <strong>@yerbamatep12</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notificación -->
+  <div id="toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 hidden bg-mate-dark text-white px-5 py-3 rounded-full shadow-xl border border-mate-gold/40 text-xs sm:text-sm font-semibold">
+    Producto agregado al pedido
+  </div>
+
+  <!-- Input oculto para subir fotos reales -->
+  <input type="file" id="hiddenPhotoInput" accept="image/*" class="hidden" onchange="handlePhotoUpload(event)" />
+
+  <script>
+    // ==========================================
+    // BASE DE DATOS COMPLETA DEL CATÁLOGO
+    // ==========================================
+    const products = [
+      // --- CATEGORÍA MATES ---
+      {
+        id: 'mate-ranchero',
+        category: 'Mates',
+        name: 'Mate Ranchero de Algarrobo',
+        basePrice: 30000,
+        description: 'Madera de algarrobo maciza trabajada artesanalmente con detalles pintados a mano, incrustaciones y base a tono.',
+        variants: [
+          { label: 'Blanco', price: 30000, colorHex: '#F8FAFC', visualKey: 'ranchero-blanco' },
+          { label: 'Negro (con incrustaciones)', price: 30000, colorHex: '#1E293B', visualKey: 'ranchero-negro' }
+        ],
+        badge: 'Artesanal'
+      },
+      {
+        id: 'coquito-camionero-criollo',
+        category: 'Mates',
+        name: 'Mate Coquito Camionero Criollo',
+        basePrice: 26000,
+        description: 'Calabaza/madera con acabado brillante y faja de cuero gamuzado natural con costura artesanal reforzada.',
+        variants: [
+          { label: 'Cuero Natural', price: 26000, colorHex: '#D6C3A5', visualKey: 'coquito-camionero' }
+        ]
+      },
+      {
+        id: 'coquito-criollo',
+        category: 'Mates',
+        name: 'Coquito Criollo',
+        basePrice: 22000,
+        description: 'Formato clásico compacto con faja de cuero en tono natural y costura artesanal en el lateral.',
+        variants: [
+          { label: 'Natural', price: 22000, colorHex: '#B08968', visualKey: 'coquito-criollo' }
+        ]
+      },
+      {
+        id: 'torpedo-cincelado-alpaca',
+        category: 'Mates',
+        name: 'Torpedo Cincelado Alpaca Tradicional',
+        basePrice: 40000,
+        description: 'Forrado en cuero vacuno negro con base firme de cuatro patas y virola de alpaca cincelada en la boca.',
+        variants: [
+          { label: 'Cuero Negro', price: 40000, colorHex: '#18181B', visualKey: 'torpedo-cincelado' }
+        ],
+        badge: 'Clásico'
+      },
+      {
+        id: 'imperial-cincelado-alpaca',
+        category: 'Mates',
+        name: 'Imperial Cincelado de Alpaca',
+        basePrice: 35000,
+        description: 'Forrado en cuero vacuno seleccionado con guarda geométrica pampa cincelada en alpaca y base de cuatro patas.',
+        variants: [
+          { label: 'Negro', price: 35000, colorHex: '#18181B', visualKey: 'imperial-cincelado-negro' },
+          { label: 'Bordó', price: 35000, colorHex: '#6E1E2A', visualKey: 'imperial-cincelado-bordo' }
+        ],
+        badge: 'Más elegido'
+      },
+      {
+        id: 'torpedo-repujado-alpaca',
+        category: 'Mates',
+        name: 'Torpedo Repujado de Alpaca Tradicional',
+        basePrice: 45000,
+        description: 'Cuero repujado artesanalmente a mano con relieves botánicos y virola de alpaca tradicional.',
+        variants: [
+          { label: 'Marrón', price: 45000, colorHex: '#8B4513', visualKey: 'torpedo-repujado-marron' },
+          { label: 'Negro', price: 45000, colorHex: '#18181B', visualKey: 'torpedo-repujado-negro' }
+        ],
+        badge: 'Premium'
+      },
+      {
+        id: 'imperial-roma-alpaca',
+        category: 'Mates',
+        name: 'Imperial Roma Alpaca Liso',
+        basePrice: 50000,
+        description: 'Diseño exclusivo de alta gama con virola superior y fleje inferior metálico labrado sobre cuero bordó repujado.',
+        variants: [
+          { label: 'Bordó', price: 50000, colorHex: '#721C24', visualKey: 'imperial-roma' }
+        ],
+        badge: 'Exclusivo'
+      },
+      {
+        id: 'torpedo-imperial-criollo',
+        category: 'Mates',
+        name: 'Torpedo Imperial Criollo',
+        basePrice: 40000,
+        description: 'Calabaza rústica seleccionada con faja de cuero gamuzado claro y virola de alpaca labrada con borde de bronce.',
+        variants: [
+          { label: 'Gamuzado Claro', price: 40000, colorHex: '#DDD0B8', visualKey: 'torpedo-imperial-criollo' }
+        ]
+      },
+      {
+        id: 'imperial-alpaca-madera',
+        category: 'Mates',
+        name: 'Imperial Alpaca',
+        basePrice: 30000,
+        description: 'Cuerpo de madera maciza torneada en tono natural con guarda geométrica cincelada en alpaca.',
+        variants: [
+          { label: 'Madera Natural', price: 30000, colorHex: '#C68B59', visualKey: 'imperial-alpaca-madera' }
+        ]
+      },
+      {
+        id: 'mate-galleta',
+        category: 'Mates',
+        name: 'Mate Galleta',
+        basePrice: 30000,
+        description: 'Formato tradicional chato de calabaza/madera con faja ancha de cuero marrón y costura en zigzag.',
+        variants: [
+          { label: 'Cuero Marrón', price: 30000, colorHex: '#9C6644', visualKey: 'mate-galleta' }
+        ]
+      },
+      {
+        id: 'camionero-algarrobo-pulido',
+        category: 'Mates',
+        name: 'Camionero de Algarrobo Pulido',
+        basePrice: 16000,
+        description: 'Cuerpo de algarrobo pulido en tono cálido natural con virola metálica superior. Liviano y resistente.',
+        variants: [
+          { label: 'Algarrobo Natural', price: 16000, colorHex: '#D4A373', visualKey: 'camionero-algarrobo' }
+        ],
+        badge: 'Ideal diario'
+      },
+
+      // --- CATEGORÍA BOMBILLAS ---
+      {
+        id: 'bombilla-alpaca',
+        category: 'Bombillas',
+        name: 'Bombilla de Alpaca',
+        basePrice: 22000,
+        description: 'Modelos artesanales en alpaca con pico curvo, caño labrado o torsade y filtro pala perforado de excelente tiraje.',
+        variants: [
+          { label: 'Alpaca Artesanal', price: 22000, colorHex: '#CBD5E1', visualKey: 'bombilla-alpaca' }
+        ],
+        badge: 'Alpaca'
+      },
+      {
+        id: 'bombilla-acero',
+        category: 'Bombillas',
+        name: 'Bombilla de Acero',
+        basePrice: 7000,
+        description: 'Acero inoxidable resistente, higiénico y muy fácil de limpiar, ideal para acompañar el mate de todos los días.',
+        variants: [
+          { label: 'Acero Inoxidable', price: 7000, colorHex: '#94A3B8', visualKey: 'bombilla-acero' }
+        ]
+      },
+
+      // --- CATEGORÍA YERBAS ---
+      {
+        id: 'yerba-baldo',
+        category: 'Yerbas',
+        name: 'Yerba Mate Baldo',
+        basePrice: 6500,
+        description: 'Molienda tipo uruguaya de sabor intenso, pareja y duradera. Disponible en paquetes de 1/2 kg, 1 kg y lata coleccionable.',
+        variants: [
+          { label: '1/2 kg', price: 6500, colorHex: '#B91C1C', visualKey: 'yerba-baldo' },
+          { label: '1 kg', price: 12000, colorHex: '#991B1B', visualKey: 'yerba-baldo' },
+          { label: 'Lata 1/2 kg', price: 22000, colorHex: '#DC2626', visualKey: 'yerba-baldo-lata' }
+        ],
+        badge: 'Importada'
+      },
+      {
+        id: 'yerba-canarias-comun',
+        category: 'Yerbas',
+        name: 'Yerba Canarias Común (Amarilla)',
+        basePrice: 6500,
+        description: 'La clásica yerba uruguaya 100% hoja sin palo, de sabor intenso y espuma persistente.',
+        variants: [
+          { label: '1/2 kg', price: 6500, colorHex: '#EAB308', visualKey: 'canarias-amarilla' },
+          { label: '1 kg', price: 12000, colorHex: '#CA8A04', visualKey: 'canarias-amarilla' }
+        ],
+        badge: 'Clásica'
+      },
+      {
+        id: 'yerba-canarias-te-verde',
+        category: 'Yerbas',
+        name: 'Yerba Canarias Té Verde y Jengibre',
+        basePrice: 7000,
+        description: 'Combinación equilibrada de yerba mate con notas frescas de té verde y un toque aromático de jengibre.',
+        variants: [
+          { label: '1/2 kg', price: 7000, colorHex: '#F3F4F6', visualKey: 'canarias-teverde' },
+          { label: '1 kg', price: 13000, colorHex: '#E5E7EB', visualKey: 'canarias-teverde' }
+        ]
+      },
+      {
+        id: 'yerba-canarias-serena',
+        category: 'Yerbas',
+        name: 'Yerba Canarias Serena',
+        basePrice: 7000,
+        description: 'Compuesta con hierbas naturales seleccionadas (tilo, mburucuyá, menta y toronjil) para una cebada suave y armoniosa.',
+        variants: [
+          { label: '1/2 kg', price: 7000, colorHex: '#15803D', visualKey: 'canarias-serena' },
+          { label: '1 kg', price: 13000, colorHex: '#166534', visualKey: 'canarias-serena' }
+        ]
+      },
+      {
+        id: 'yerba-canarias-especial',
+        category: 'Yerbas',
+        name: 'Yerba Canarias Edición Especial',
+        basePrice: 7000,
+        description: 'Selección exclusiva de hojas estacionadas con cuerpo robusto y aroma profundo para materos exigentes.',
+        variants: [
+          { label: '1/2 kg', price: 7000, colorHex: '#064E3B', visualKey: 'canarias-especial' },
+          { label: '1 kg', price: 13000, colorHex: '#022C22', visualKey: 'canarias-especial' }
+        ],
+        badge: 'Especial'
+      },
+
+      // --- CATEGORÍA TERMOS Y ACCESORIOS ---
+      {
+        id: 'termo-media-manija',
+        category: 'Termos y Accesorios',
+        name: 'Termo Media Manija',
+        basePrice: 20000,
+        description: 'Acero inoxidable doble capa de excelente conservación térmica, manija ergonómica, pico cebador y tapa térmica.',
+        variants: [
+          { label: 'Negro Opaco', price: 20000, colorHex: '#1F2937', visualKey: 'termo-opaco' },
+          { label: 'Negro Brillante', price: 20000, colorHex: '#09090B', visualKey: 'termo-brillante' }
+        ]
+      },
+      {
+        id: 'yerbera-despolvillador',
+        category: 'Termos y Accesorios',
+        name: 'Yerbera Despolvillador Quo',
+        basePrice: 8000,
+        description: 'Yerbera portátil con pico vertedor sin derrames, filtro interno despolvillador y compartimiento inferior desmontable.',
+        variants: [
+          { label: 'Negro / Translúcido', price: 8000, colorHex: '#18181B', visualKey: 'despolvillador' }
+        ],
+        badge: 'Práctico'
+      }
+    ];
+
+    // Estado de la aplicación
+    let activeCategory = 'Todos';
+    let selectedVariants = {}; // { productId: variantIndex }
+    let cart = []; // [{ key, productId, name, variantLabel, price, qty }]
+    let editMode = false;
+    let uploadingProductId = null;
+    let customPhotos = {}; // { productId: dataUrl }
+
+    // Inicializar variantes seleccionadas por defecto (índice 0) y cargar fotos guardadas
+    products.forEach(p => {
+      selectedVariants[p.id] = 0;
+    });
+
+    try {
+      const savedPhotos = localStorage.getItem('yerbamatep12_photos');
+      if (savedPhotos) customPhotos = JSON.parse(savedPhotos);
+    } catch (e) {
+      console.warn('No se pudo acceder a localStorage:', e);
+    }
+
+    // Formateador de moneda ARS
+    function formatPrice(num) {
+      return '$' + num.toLocaleString('es-AR');
+    }
+
+    // ==========================================
+    // GENERADOR DE ILUSTRACIONES SVG ARTESANALES
+    // ==========================================
+    function getProductSVG(visualKey) {
+      // Mates
+      if (visualKey === 'ranchero-blanco' || visualKey === 'ranchero-negro') {
+        const paint = visualKey === 'ranchero-blanco' ? '#FFFFFF' : '#18181B';
+        const rimStroke = visualKey === 'ranchero-blanco' ? '#E2E8F0' : '#09090B';
+        const dots = visualKey === 'ranchero-negro'
+          ? '<circle cx="82" cy="92" r="2" fill="#93C5FD"/><circle cx="77" cy="100" r="1.8" fill="#CBD5E1"/><circle cx="88" cy="100" r="1.8" fill="#CBD5E1"/><circle cx="82" cy="108" r="2" fill="#E2E8F0"/>'
+          : '<circle cx="82" cy="95" r="1.5" fill="#CBD5E1"/><circle cx="82" cy="105" r="1.5" fill="#CBD5E1"/>';
+        return `
+          <svg viewBox="0 0 200 180" class="w-36 h-36 drop-shadow-md">
+            <path d="M62 62C62 46 76 40 100 40C124 40 138 46 138 62C138 102 128 148 100 148C72 148 62 102 62 62Z" fill="#B57E4C"/>
+            <path d="M66 106C78 98 88 112 100 94C112 112 122 100 134 106C131 132 120 148 100 148C80 148 69 132 66 106Z" fill="${paint}"/>
+            <path d="M95 45H105L108 115H92L95 45Z" fill="${paint}" opacity="0.9"/>
+            <ellipse cx="100" cy="45" rx="34" ry="9" fill="#8C5828" stroke="${paint}" stroke-width="5"/>
+            ${dots}
+          </svg>`;
+      }
+
+      if (visualKey === 'coquito-camionero' || visualKey === 'coquito-criollo') {
+        const leather = visualKey === 'coquito-camionero' ? '#D6C3A5' : '#A98467';
+        const body = visualKey === 'coquito-camionero' ? '#8F5B25' : '#9C6B3B';
+        return `
+          <svg viewBox="0 0 200 180" class="w-36 h-36 drop-shadow-md">
+            <path d="M66 52C66 40 80 36 100 36C120 36 134 40 134 52L130 138C128 146 116 150 100 150C84 150 72 146 70 138L66 52Z" fill="${body}"/>
+            <path d="M67 82H133L131 140C125 147 114 150 100 150C86 150 75 147 69 140L67 82Z" fill="${leather}" stroke="#7F5539" stroke-width="1"/>
+            <path d="M122 86L127 92M127 86L122 92M122 98L127 104M127 98L122 104M122 110L127 116M127 110L122 116M122 122L127 128M127 122L122 128" stroke="#FAF7F2" stroke-width="1.8" stroke-linecap="round"/>
+            <ellipse cx="100" cy="42" rx="34" ry="8" fill="#E6CCB2" stroke="#D4A373" stroke-width="2"/>
+            <ellipse cx="100" cy="42" rx="25" ry="5" fill="#7F5539"/>
+          </svg>`;
+      }
+
+      if (visualKey === 'torpedo-cincelado') {
+        return `
+          <svg viewBox="0 0 200 180" class="w-36 h-36 drop-shadow-md">
+            <path d="M74 128L68 152H80L84 134" fill="#18181B"/>
+            <path d="M126 128L132 152H120L116 134" fill="#18181B"/>
+            <path d="M60 72C60 52 76 44 100 44C124 44 140 52 140 72C140 108 126 136 100 136C74 136 60 108 60 72Z" fill="#27272A"/>
+            <path d="M66 56C72 44 84 40 100 40C116 40 128 44 134 56L136 64H64L66 56Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1"/>
+            <path d="M72 54V60M82 52V60M92 51V60M100 51V60M108 51V60M118 52V60M128 54V60" stroke="#64748B" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>`;
+      }
+
+      if (visualKey === 'imperial-cincelado-negro' || visualKey === 'imperial-cincelado-bordo') {
+        const leather = visualKey === 'imperial-cincelado-negro' ? '#27272A' : '#6E1E2A';
+        const leg = visualKey === 'imperial-cincelado-negro' ? '#18181B' : '#4A121B';
+        return `
+          <svg viewBox="0 0 200 180" class="w-36 h-36 drop-shadow-md">
+            <path d="M74 126L68 152H82L85 134" fill="${leg}"/>
+            <path d="M126 126L132 152H118L115 134" fill="${leg}"/>
+            <path d="M58 64C58 48 75 42 100 42C125 42 142 48 142 64C142 104 128 136 100 136C72 136 58 104 58 64Z" fill="${leather}"/>
+            <rect x="60" y="46" width="80" height="20" rx="5" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1"/>
+            <path d="M72 56H82M77 51V61M95 56H105M100 51V61M118 56H128M123 51V61" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+          </svg>`;
+      }
+
+      if (visualKey === 'torpedo-repujado-marron' || visualKey === 'torpedo-repujado-negro') {
+        const leather = visualKey === 'torpedo-repujado-marron' ? '#8B4513' : '#27272A';
+        const stroke = visualKey === 'torpedo-repujado-marron' ? '#5C2C06' : '#09090B';
+        return `
+          <svg viewBox="0 0 200 180" class="w-36 h-36 drop-shadow-md">
+            <path d="M74 128L68 152H80L84 134" fill="${stroke}"/>
+            <path d="M126 128L132 152H120L116 134" fill="${stroke}"/>
+            <path d="M60 72C60 52 76 44 100 44C124 44 140 52 140 72C140 108 126 136 100 136C74 136 60 108 60 72Z" fill="${leather}"/>
+            <!-- Relieve repujado -->
+            <path d="M74 74C84 84 84 108 74 118M126 74C116 84 116 108 126 118M88 86C100 76 112 86 100 106C88 86 100 76 112 86" stroke="${stroke}" stroke-width="2" fill="none" opacity="0.6"/>
+            <path d="M66 56C72 44 84 40 100 40C116 40 128 44 134 56L136 64H64L66 56Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1"/>
+          </svg>`;
+      }
+
+      if (visualKey === 'imperial-roma') {
+        return `
+          <svg viewBox="0 0 200 180" class="w-36 h-36 drop-shadow-md">
+            <path d="M62 56C62 44 78 40 100 40C122 40 138 44 138 56L132 134C130 144 118 148 100 148C82 148 70 144 68 134L62 56Z" fill="#721C24"/>
+            <path d="M76 80C90 70 110 70 124 80M78 105C92 115 108 115 122 105" stroke="#4A121B" stroke-width="2.2" fill="none"/>
+            <rect x="61" y="42" width="78" height="22" rx="4" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1"/>
+            <path d="M68 53C78 47 88 59 98 53C108 47 118 59 132 53" stroke="#475569" stroke-width="1.6" fill="none"/>
+            <path d="M68 128H132L128 145C120 148 80 148 72 145L68 128Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1"/>
+          </svg>`;
+      }
+
+      if (visualKey === 'torpedo-imperial-criollo') {
+        return `
+          <svg viewBox="0 0 200 180" class="w-36 h-36 drop-shadow-md">
+            <path d="M62 72C62 52 78 44 100 44C122 44 138 52 138 72L134 138C130 146 116 150 100 150C84 150 70 146 66 138L62 72Z" fill="#8C5A2B"/>
+            <path d="M63 92H137L134 140C126 147 114 150 100 150C86 150 74 147 66 140L63 92Z" fill="#DDD0B8"/>
+            <path d="M66 56C72 44 84 40 100 40C116 40 128 44 134 56L136 66H64L66 56Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1"/>
+            <rect x="72" y="38" width="56" height="6" rx="2" fill="#D97706"/>
+          </svg>`;
+      }
+
+      if (visualKey === 'imperial-alpaca-madera') {
+        return `
+          <svg viewBox="0 0 200 180" class="w-36 h-36 drop-shadow-md">
+            <path d="M64 56C64 44 78 40 100 40C122 40 136 44 136 56C136 86 126 112 128 134C130 144 118 148 100 148C82 148 70 144 72 134C74 112 64 86 64 56Z" fill="#C68B59"/>
+            <rect x="64" y="44" width="72" height="19" rx="4" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1"/>
+            <path d="M74 53H84M79 48V58M95 53H105M100 48V58M116 53H126M121 48V58" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+          </svg>`;
+      }
+
+      if (visualKey === 'mate-galleta') {
+        return `
+          <svg viewBox="0 0 200 180" class="w-36 h-36 drop-shadow-md">
+            <ellipse cx="100" cy="88" rx="44" ry="38" fill="#D4A373"/>
+            <rect x="52" y="82" width="96" height="48" rx="10" fill="#9C6644" stroke="#7F5539" stroke-width="1"/>
+            <path d="M66 106L74 98L82 108L90 98L98 108L106 98L114 108L122 98L130 106" stroke="#FAF7F2" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+            <ellipse cx="100" cy="54" rx="24" ry="6" fill="#7F5539"/>
+          </svg>`;
+      }
+
+      if (visualKey === 'camionero-algarrobo') {
+        return `
+          <svg viewBox="0 0 200 180" class="w-36 h-36 drop-shadow-md">
+            <path d="M64 54C64 46 78 44 100 44C122 44 136 46 136 54C132 76 138 106 130 138C126 146 114 148 100 148C86 148 74 146 70 138C62 106 68 76 64 54Z" fill="#D4A373"/>
+            <ellipse cx="100" cy="48" rx="38" ry="6" fill="#CBD5E1" stroke="#64748B" stroke-width="1.5"/>
+            <ellipse cx="100" cy="48" rx="28" ry="4" fill="#9C6644"/>
+          </svg>`;
+      }
+
+      // Bombillas
+      if (visualKey === 'bombilla-alpaca' || visualKey === 'bombilla-acero') {
+        const isAlpaca = visualKey === 'bombilla-alpaca';
+        const tipColor = isAlpaca ? '#D97706' : '#CBD5E1';
+        return `
+          <svg viewBox="0 0 200 180" class="w-36 h-36 drop-shadow-md">
+            <!-- Bombilla 1 -->
+            <path d="M62 135L118 35" stroke="#CBD5E1" stroke-width="6" stroke-linecap="round"/>
+            <path d="M108 53L118 35" stroke="${tipColor}" stroke-width="6.5" stroke-linecap="round"/>
+            <ellipse cx="58" cy="140" rx="12" ry="16" transform="rotate(30 58 140)" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.5"/>
+            <circle cx="56" cy="138" r="1.2" fill="#475569"/><circle cx="61" cy="141" r="1.2" fill="#475569"/><circle cx="55" cy="144" r="1.2" fill="#475569"/>
+            <!-- Bombilla 2 -->
+            <path d="M98 140L150 45" stroke="#94A3B8" stroke-width="5.5" stroke-linecap="round"/>
+            <ellipse cx="94" cy="145" rx="11" ry="15" transform="rotate(30 94 145)" fill="#CBD5E1" stroke="#64748B" stroke-width="1.5"/>
+            <circle cx="92" cy="143" r="1.2" fill="#334155"/><circle cx="97" cy="146" r="1.2" fill="#334155"/>
+          </svg>`;
+      }
+
+      // Yerbas
+      if (visualKey.startsWith('yerba-baldo')) {
+        const isLata = visualKey === 'yerba-baldo-lata';
+        return `
+          <svg viewBox="0 0 200 180" class="w-36 h-36 drop-shadow-md">
+            <rect x="64" y="34" width="72" height="114" rx="${isLata ? '10' : '6'}" fill="#DC2626"/>
+            <rect x="64" y="96" width="72" height="52" rx="4" fill="#15803D"/>
+            <rect x="70" y="62" width="60" height="34" rx="12" fill="#1E3A8A" stroke="#FFFFFF" stroke-width="2"/>
+            <text x="100" y="84" fill="#FFFFFF" font-family="serif" font-weight="bold" font-style="italic" font-size="16" text-anchor="middle">Baldo</text>
+            ${isLata ? '<path d="M114 34L126 22L132 34H114Z" fill="#B91C1C"/>' : ''}
+          </svg>`;
+      }
+
+      if (visualKey.startsWith('canarias-')) {
+        let bg = '#FACC15', text = '#166534', sub = 'TRADICIONAL';
+        if (visualKey === 'canarias-teverde') { bg = '#F8FAFC'; text = '#15803D'; sub = 'TÉ VERDE'; }
+        if (visualKey === 'canarias-serena') { bg = '#16A34A'; text = '#FFFFFF'; sub = 'SERENA'; }
+        if (visualKey === 'canarias-especial') { bg = '#064E3B'; text = '#FACC15'; sub = 'ED. ESPECIAL'; }
+        return `
+          <svg viewBox="0 0 200 180" class="w-36 h-36 drop-shadow-md">
+            <rect x="64" y="32" width="72" height="118" rx="6" fill="${bg}" stroke="#CBD5E1" stroke-width="1"/>
+            <circle cx="100" cy="68" r="18" fill="#14532D" stroke="#FACC15" stroke-width="2"/>
+            <rect x="68" y="106" width="64" height="20" rx="3" fill="#DC2626"/>
+            <text x="100" y="120" fill="#FACC15" font-family="sans-serif" font-weight="900" font-size="10" text-anchor="middle">CANARIAS</text>
+            <text x="100" y="98" fill="${text}" font-family="sans-serif" font-weight="bold" font-size="7.5" text-anchor="middle">${sub}</text>
+          </svg>`;
+      }
+
+      // Termo
+      if (visualKey.startsWith('termo-')) {
+        const isGlossy = visualKey === 'termo-brillante';
+        return `
+          <svg viewBox="0 0 200 180" class="w-36 h-36 drop-shadow-md">
+            <rect x="76" y="48" width="44" height="106" rx="8" fill="#18181B"/>
+            ${isGlossy ? '<rect x="84" y="52" width="6" height="98" rx="3" fill="#FFFFFF" opacity="0.22"/>' : ''}
+            <path d="M120 62H132C135 62 137 64 137 67V112" stroke="#18181B" stroke-width="5" stroke-linecap="round" fill="none"/>
+            <rect x="80" y="26" width="36" height="22" rx="5" fill="#27272A"/>
+            <path d="M98 26L106 18" stroke="#DC2626" stroke-width="4" stroke-linecap="round"/>
+          </svg>`;
+      }
+
+      // Yerbera Despolvillador
+      return `
+        <svg viewBox="0 0 200 180" class="w-36 h-36 drop-shadow-md">
+          <rect x="74" y="34" width="52" height="72" rx="6" fill="#18181B"/>
+          <path d="M74 106H126V134C126 142 118 148 100 148C82 148 74 142 74 134V106Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1"/>
+          <rect x="72" y="28" width="56" height="10" rx="4" fill="#27272A"/>
+          <text x="100" y="74" fill="#FFFFFF" font-family="sans-serif" font-weight="bold" font-size="11" text-anchor="middle">Quo</text>
+          <text x="100" y="130" fill="#64748B" font-family="sans-serif" font-weight="bold" font-size="7" text-anchor="middle">FILTRO POLVILLO</text>
+        </svg>`;
+    }
+
+    // ==========================================
+    // RENDERIZADO DE PRODUCTOS Y FILTROS
+    // ==========================================
+    function setCategory(cat) {
+      activeCategory = cat;
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        if (btn.dataset.cat === cat) {
+          btn.classList.remove('bg-mate-paper', 'text-mate-dark', 'font-semibold');
+          btn.classList.add('bg-mate-dark', 'text-white', 'font-bold');
+        } else {
+          btn.classList.remove('bg-mate-dark', 'text-white', 'font-bold');
+          btn.classList.add('bg-mate-paper', 'text-mate-dark', 'font-semibold');
+        }
+      });
+      document.getElementById('sectionTitle').textContent = cat === 'Todos' ? 'Catálogo Completo' : cat;
+      renderProducts();
+    }
+
+    function selectVariant(productId, variantIdx, event) {
+      if (event) event.stopPropagation();
+      selectedVariants[productId] = variantIdx;
+      renderProducts();
+    }
+
+    function resetFilters() {
+      document.getElementById('searchInput').value = '';
+      document.getElementById('sortSelect').value = 'default';
+      setCategory('Todos');
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById('productsGrid');
+      const emptyState = document.getElementById('emptyState');
+      const searchVal = document.getElementById('searchInput').value.toLowerCase().trim();
+      const sortVal = document.getElementById('sortSelect').value;
+
+      let filtered = products.filter(p => {
+        const matchCat = activeCategory === 'Todos' || p.category === activeCategory;
+        const textToSearch = `${p.name} ${p.category} ${p.description} ${p.variants.map(v => v.label).join(' ')}`.toLowerCase();
+        const matchSearch = textToSearch.includes(searchVal);
+        return matchCat && matchSearch;
+      });
+
+      if (sortVal === 'asc') {
+        filtered.sort((a, b) => a.variants[selectedVariants[a.id]].price - b.variants[selectedVariants[b.id]].price);
+      } else if (sortVal === 'desc') {
+        filtered.sort((a, b) => b.variants[selectedVariants[b.id]].price - a.variants[selectedVariants[a.id]].price);
+      }
+
+      document.getElementById('resultsCount').textContent = `Mostrando ${filtered.length} ${filtered.length === 1 ? 'producto disponible' : 'productos disponibles'}`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      grid.innerHTML = filtered.map(p => {
+        const vIdx = selectedVariants[p.id] || 0;
+        const currentVariant = p.variants[vIdx];
+        const hasCustomPhoto = Boolean(customPhotos[p.id]);
+
+        // Visual: foto subida por el usuario o SVG artesanal
+        const visualHTML = hasCustomPhoto
+          ? `<img src="${customPhotos[p.id]}" alt="${p.name}" class="w-full h-48 object-cover rounded-2xl" />`
+          : `<div class="w-full h-48 flex items-center justify-center bg-gradient-to-b from-mate-paper/70 to-mate-paper rounded-2xl p-3">
+               ${getProductSVG(currentVariant.visualKey)}
+             </div>`;
+
+        // Selector de variantes (si tiene más de 1)
+        const variantsHTML = p.variants.length > 1
+          ? `<div class="flex flex-wrap gap-1.5 pt-1">
+               ${p.variants.map((v, idx) => `
+                 <button onclick="selectVariant('${p.id}', ${idx}, event)"
+                   class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold border transition ${
+                     idx === vIdx
+                       ? 'bg-mate-dark text-white border-mate-dark'
+                       : 'bg-white text-mate-dark border-mate-wood/25 hover:border-mate-dark'
+                   }">
+                   <span class="w-2.5 h-2.5 rounded-full border border-black/20" style="background-color:${v.colorHex}"></span>
+                   <span>${v.label}</span>
+                 </button>
+               `).join('')}
+             </div>`
+          : `<div class="pt-1">
+               <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-mate-paper text-mate-wood">
+                 <span class="w-2 h-2 rounded-full" style="background-color:${currentVariant.colorHex}"></span>
+                 ${currentVariant.label}
+               </span>
+             </div>`;
+
+        // Botón modo edición para subir foto real
+        const editBtnHTML = editMode
+          ? `<button onclick="triggerPhotoUpload('${p.id}', event)"
+               class="mt-2 w-full py-2 px-3 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 text-xs font-bold transition">
+               📷 ${hasCustomPhoto ? 'Cambiar Foto Real' : 'Subir Foto Real'}
+             </button>`
+          : '';
+
+        return `
+          <article onclick="openProductModal('${p.id}')"
+            class="group bg-white rounded-3xl border border-mate-wood/15 p-4 flex flex-col justify-between card-shadow transition duration-300 cursor-pointer">
+            <div>
+              <div class="relative overflow-hidden rounded-2xl mb-4">
+                ${visualHTML}
+                ${p.badge ? `<span class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-full bg-mate-dark/90 text-mate-goldLight text-[10px] font-bold uppercase tracking-wider backdrop-blur-xs">${p.badge}</span>` : ''}
+                <span class="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-full bg-white/90 text-mate-dark text-[10px] font-semibold shadow-xs opacity-0 group-hover:opacity-100 transition">
+                  Ver detalle
+                </span>
+              </div>
+
+              ${editBtnHTML}
+
+              <div class="space-y-1.5">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-mate-primary">${p.category}</span>
+                <h3 class="font-serif text-lg font-bold text-mate-dark leading-snug group-hover:text-mate-primary transition">
+                  ${p.name}
+                </h3>
+                <p class="text-xs text-mate-wood line-clamp-2 leading-relaxed">
+                  ${p.description}
+                </p>
+              </div>
+
+              <div class="mt-2.5">
+                ${variantsHTML}
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-mate-wood/10 flex items-center justify-between gap-2">
+              <div>
+                <span class="block text-[10px] uppercase tracking-wider text-mate-wood">Precio</span>
+                <span class="font-serif text-xl font-extrabold text-mate-dark">${formatPrice(currentVariant.price)}</span>
+              </div>
+              <button onclick="addToCart('${p.id}', event)"
+                class="px-4 py-2.5 rounded-full bg-mate-dark text-white text-xs font-bold hover:bg-mate-primary transition shadow-xs active:scale-95">
+                + Agregar
+              </button>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    // ==========================================
+    // MODAL DETALLE DE PRODUCTO
+    // ==========================================
+    function openProductModal(productId) {
+      const p = products.find(item => item.id === productId);
+      if (!p) return;
+
+      const vIdx = selectedVariants[p.id] || 0;
+      const v = p.variants[vIdx];
+
+      document.getElementById('modalCategory').textContent = p.category;
+      document.getElementById('modalTitle').textContent = p.name;
+      document.getElementById('modalPrice').textContent = formatPrice(v.price);
+      document.getElementById('modalDescription').textContent = p.description;
+
+      const visualContainer = document.getElementById('modalVisualContainer');
+      if (customPhotos[p.id]) {
+        visualContainer.innerHTML = `<img src="${customPhotos[p.id]}" alt="${p.name}" class="w-full max-h-60 object-cover rounded-2xl shadow-md" />`;
+      } else {
+        visualContainer.innerHTML = getProductSVG(v.visualKey);
+      }
+
+      const variantsList = document.getElementById('modalVariantsList');
+      variantsList.innerHTML = p.variants.map((variant, idx) => `
+        <button onclick="selectVariantInModal('${p.id}', ${idx})"
+          class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-bold border transition ${
+            idx === vIdx
+              ? 'bg-mate-dark text-white border-mate-dark'
+              : 'bg-white text-mate-dark border-mate-wood/25 hover:border-mate-dark'
+          }">
+          <span class="w-3 h-3 rounded-full border border-black/20" style="background-color:${variant.colorHex}"></span>
+          <span>${variant.label} (${formatPrice(variant.price)})</span>
+        </button>
+      `).join('');
+
+      document.getElementById('modalAddBtn').onclick = () => {
+        addToCart(p.id);
+        closeProductModal();
+      };
+
+      const modal = document.getElementById('productModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function selectVariantInModal(productId, idx) {
+      selectedVariants[productId] = idx;
+      renderProducts();
+      openProductModal(productId);
+    }
+
+    function closeProductModal() {
+      const modal = document.getElementById('productModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // ==========================================
+    // CARRITO / ARMADOR DE PEDIDO
+    // ==========================================
+    function addToCart(productId, event) {
+      if (event) event.stopPropagation();
+      const p = products.find(item => item.id === productId);
+      if (!p) return;
+
+      const vIdx = selectedVariants[p.id] || 0;
+      const v = p.variants[vIdx];
+      const itemKey = `${p.id}__${v.label}`;
+
+      const existing = cart.find(c => c.key === itemKey);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          key: itemKey,
+          productId: p.id,
+          name: p.name,
+          variantLabel: v.label,
+          price: v.price,
+          qty: 1
+        });
+      }
+
+      updateCartUI();
+      showToast(`✓ Agregado: ${p.name} (${v.label})`);
+    }
+
+    function updateQty(itemKey, delta) {
+      const idx = cart.findIndex(c => c.key === itemKey);
+      if (idx === -1) return;
+      cart[idx].qty += delta;
+      if (cart[idx].qty <= 0) {
+        cart.splice(idx, 1);
+      }
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
+      const totalAmount = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+
+      document.getElementById('headerCartCount').textContent = totalItems;
+      document.getElementById('floatCartBadge').textContent = totalItems;
+      document.getElementById('floatCartTotal').textContent = formatPrice(totalAmount);
+      document.getElementById('drawerTotal').textContent = formatPrice(totalAmount);
+
+      const container = document.getElementById('cartItemsContainer');
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 space-y-3">
+            <p class="text-4xl">🧉</p>
+            <p class="font-serif text-lg font-bold text-mate-dark">Tu pedido está vacío</p>
+            <p class="text-xs text-mate-wood max-w-xs mx-auto">Explorá el catálogo y tocá "+ Agregar" en los mates, yerbas o accesorios que te gusten.</p>
+          </div>`;
+        return;
+      }
+
+      container.innerHTML = cart.map(item => `
+        <div class="bg-white rounded-2xl p-3.5 border border-mate-wood/15 flex items-center justify-between gap-3">
+          <div class="min-w-0 flex-1">
+            <h4 class="font-serif font-bold text-sm text-mate-dark truncate">${item.name}</h4>
+            <p class="text-xs text-mate-wood">Opción: ${item.variantLabel} • ${formatPrice(item.price)} c/u</p>
+            <p class="text-xs font-bold text-mate-primary mt-1">${formatPrice(item.price * item.qty)}</p>
+          </div>
+          <div class="flex items-center gap-2 bg-mate-paper rounded-full px-2 py-1">
+            <button onclick="updateQty('${item.key}', -1)" class="w-6 h-6 rounded-full bg-white text-mate-dark font-bold text-xs shadow-2xs hover:bg-mate-dark hover:text-white transition">−</button>
+            <span class="text-xs font-bold w-4 text-center">${item.qty}</span>
+            <button onclick="updateQty('${item.key}', 1)" class="w-6 h-6 rounded-full bg-white text-mate-dark font-bold text-xs shadow-2xs hover:bg-mate-dark hover:text-white transition">+</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openCart() {
+      document.getElementById('cartDrawer').classList.remove('hidden');
+    }
+
+    function closeCart() {
+      document.getElementById('cartDrawer').classList.add('hidden');
+    }
+
+    function buildOrderText() {
+      if (cart.length === 0) return '';
+      const name = document.getElementById('customerName').value.trim();
+      const delivery = document.getElementById('deliveryMethod').value;
+      const totalAmount = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+
+      let lines = [
+        `¡Hola *YERBAMATEP12*! 🧉 Quiero consultar disponibilidad para este pedido:`,
+        ``
+      ];
+      if (name) lines.push(`👤 *Nombre:* ${name}`);
+      lines.push(`📦 *Modalidad:* ${delivery}`);
+      lines.push(``);
+      lines.push(`*Detalle del pedido:*`);
+
+      cart.forEach(item => {
+        lines.push(`• ${item.qty}x ${item.name} (${item.variantLabel}) — ${formatPrice(item.price * item.qty)}`);
+      });
+
+      lines.push(``);
+      lines.push(`💰 *Total estimado:* ${formatPrice(totalAmount)}`);
+      return lines.join('\n');
+    }
+
+    function copyOrderMessage() {
+      if (cart.length === 0) {
+        showToast('Agregá al menos un producto primero');
+        return;
+      }
+      const text = buildOrderText();
+      const tempInput = document.createElement('textarea');
+      tempInput.value = text;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      showToast('📋 ¡Pedido copiado! Pegalo en WhatsApp o Instagram');
+    }
+
+    function sendWhatsAppOrder() {
+      if (cart.length === 0) {
+        showToast('Agregá al menos un producto primero');
+        return;
+      }
+      const text = encodeURIComponent(buildOrderText());
+      window.open(`https://wa.me/?text=${text}`, '_blank');
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.remove('hidden');
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 2600);
+    }
+
+    // ==========================================
+    // MODO EDICIÓN / CARGA DE FOTOS REALES
+    // ==========================================
+    function toggleEditMode() {
+      editMode = !editMode;
+      const banner = document.getElementById('editModeBanner');
+      const label = document.getElementById('editModeLabel');
+      if (editMode) {
+        banner.classList.remove('hidden');
+        if (label) label.textContent = 'Salir de Edición';
+      } else {
+        banner.classList.add('hidden');
+        if (label) label.textContent = 'Cargar Fotos';
+      }
+      renderProducts();
+    }
+
+    function triggerPhotoUpload(productId, event) {
+      if (event) event.stopPropagation();
+      uploadingProductId = productId;
+      document.getElementById('hiddenPhotoInput').click();
+    }
+
+    function handlePhotoUpload(event) {
+      const file = event.target.files[0];
+      if (!file || !uploadingProductId) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        // Comprimir imagen ligeramente para que quepa cómodo en localStorage
+        const img = new Image();
+        img.onload = function() {
+          const canvas = document.createElement('canvas');
+          const maxDim = 600;
+          let w = img.width, h = img.height;
+          if (w > maxDim || h > maxDim) {
+            if (w > h) { h = Math.round(h * maxDim / w); w = maxDim; }
+            else { w = Math.round(w * maxDim / h); h = maxDim; }
+          }
+          canvas.width = w;
+          canvas.height = h;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, w, h);
+          const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.82);
+
+          customPhotos[uploadingProductId] = compressedDataUrl;
+          try {
+            localStorage.setItem('yerbamatep12_photos', JSON.stringify(customPhotos));
+          } catch (err) {
+            showToast('Foto cargada en vista actual (memoria llena para guardar)');
+          }
+          renderProducts();
+          showToast('📸 ¡Foto actualizada con éxito!');
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+      event.target.value = '';
+    }
+
+    function resetAllCustomPhotos() {
+      customPhotos = {};
+      try {
+        localStorage.removeItem('yerbamatep12_photos');
+      } catch (e) {}
+      renderProducts();
+      showToast('Se restauraron las ilustraciones originales');
+    }
+
+    // Inicializar catálogo al cargar
+    window.addEventListener('DOMContentLoaded', () => {
+      renderProducts();
+      updateCartUI();
+    });
+  </script>
+</body>
+</html>
